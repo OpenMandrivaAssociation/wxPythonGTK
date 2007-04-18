@@ -9,8 +9,8 @@
 %define port  	GTK
 %define lcport 	gtk2u
 %define tarname wxPython-src
-%define version 2.6.3.3
-%define ver2    2.6
+%define version 2.8.3.0
+%define ver2    2.8
 %define release %mkrel 1
 %define wxpref  %{pref}/lib/wxPython
 
@@ -126,7 +126,7 @@ cd bld
 
 # Build wxWindows
 make
-%make -C contrib/src/animate 
+#%make -C contrib/src/animate 
 %make -C contrib/src/gizmos 
 %make -C contrib/src/stc
 
@@ -152,7 +152,7 @@ WXDIR=`pwd`
 # Install wxGTK and contribs
 cd bld
 make prefix=$RPM_BUILD_ROOT%{wxpref} install
-make -C contrib/src/animate prefix=$RPM_BUILD_ROOT%{wxpref} install
+#make -C contrib/src/animate prefix=$RPM_BUILD_ROOT%{wxpref} install
 make -C contrib/src/gizmos prefix=$RPM_BUILD_ROOT%{wxpref} install
 make -C contrib/src/stc prefix=$RPM_BUILD_ROOT%{wxpref} install
 
@@ -350,5 +350,3 @@ rm -rf $RPM_BUILD_ROOT
 %dir %{wxpref}/bin
 %{wxpref}/bin/wx-config
 %{wxpref}/bin/wxrc*
-
-
