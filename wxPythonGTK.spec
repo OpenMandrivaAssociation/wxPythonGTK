@@ -11,7 +11,7 @@
 %define tarname wxPython-src
 %define version 2.8.3.0
 %define ver2    2.8
-%define release %mkrel 1
+%define release %mkrel 2
 %define wxpref  %{pref}/lib/wxPython
 
 # Should --enable-debug_flag be used in release builds?
@@ -55,6 +55,7 @@ Provides: wxPython  = %{version}
 # old wxPython packages
 Obsoletes: wxPython
 Requires: %libname = %epoch:%version
+Requires: %name-wxversion = %epoch:%version
  
 %description
 wxPython is a GUI toolkit for Python that is a wrapper around the
@@ -63,6 +64,19 @@ window types and controls, all implemented with a native look and feel
 (and native runtime speed) on the platforms it is supported on.
 
 This package is implemented using the %{port} port of wxWindows.
+
+%package wxversion
+Summary: Select a specific version of wxPython
+Group: Development/Python
+%description wxversion
+wxPython is a GUI toolkit for Python that is a wrapper around the
+wxWindows C++ GUI library.  wxPython provides a large variety of
+window types and controls, all implemented with a native look and feel
+(and native runtime speed) on the platforms it is supported on.
+
+This package contains the wxversion python module needed if several versions of
+wxPython are installed.
+
 
 %package -n %libname
 Summary: Shared library of wxGTK for wxPythonGTK
@@ -321,7 +335,9 @@ rm -rf $RPM_BUILD_ROOT
 %doc docs/changes.txt
 %doc wxPython/docs/*.*
 %doc wxPython/docs/screenshots
-%py_platsitedir/wx*
+%py_platsitedir/wx.pth
+%py_platsitedir/wx*-*
+%py_platsitedir/wxaddons*
 %dir %{wxpref}
 %dir %{wxpref}/share/
 %dir %{wxpref}/share/locale
@@ -332,6 +348,9 @@ rm -rf $RPM_BUILD_ROOT
 %_iconsdir/*.png
 %_miconsdir/*.png
 
+%files wxversion
+%defattr(-,root,root)
+%py_platsitedir/wxversion*
 
 %files -n %libname
 %defattr(-,root,root)
