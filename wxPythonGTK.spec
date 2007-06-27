@@ -11,7 +11,7 @@
 %define tarname wxPython-src
 %define version 2.8.4.0
 %define ver2    2.8
-%define release %mkrel 1
+%define release %mkrel 2
 %define wxpref  %{pref}/lib/wxPython
 
 # Should --enable-debug_flag be used in release builds?
@@ -34,6 +34,8 @@ Version:   %{version}
 Release:   %{release}
 Epoch:1
 Source0:   http://prdownloads.sourceforge.net/wxpython/%{tarname}-%{version}.tar.bz2
+# gw fix from Ubuntu
+Patch:		wxgtk-2.8-new-gslice.patch
 License:   LGPL/wxWindows Library Licence, Version 3
 URL:       http://wxPython.org/
 Group:     Development/Python
@@ -101,6 +103,7 @@ that wxPython uses.
 
 %prep
 %setup -q -n %{tarname}-%{version}
+%patch -p1
 mkdir bld
 
 %build
