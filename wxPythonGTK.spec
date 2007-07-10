@@ -11,7 +11,7 @@
 %define tarname wxPython-src
 %define version 2.8.4.0
 %define ver2    2.8
-%define release %mkrel 2
+%define release %mkrel 3
 %define wxpref  %{pref}/lib/wxPython
 
 # Should --enable-debug_flag be used in release builds?
@@ -70,6 +70,8 @@ This package is implemented using the %{port} port of wxWindows.
 %package wxversion
 Summary: Select a specific version of wxPython
 Group: Development/Python
+Conflicts: wxPythonGTK < 1:2.8.3.0-2
+
 %description wxversion
 wxPython is a GUI toolkit for Python that is a wrapper around the
 wxWindows C++ GUI library.  wxPython provides a large variety of
