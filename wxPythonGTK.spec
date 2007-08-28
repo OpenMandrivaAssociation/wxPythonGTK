@@ -254,7 +254,6 @@ EOF
 mkdir -p $RPM_BUILD_ROOT%{_datadir}/applications
 cat > $RPM_BUILD_ROOT%{_datadir}/applications/mandriva-pyshell.desktop << EOF
 [Desktop Entry]
-Encoding=UTF-8
 Name=PyShell
 Comment=GUI Python Shell
 Exec=%{_bindir}/pyshell %U
@@ -266,7 +265,6 @@ Categories=GNOME;GTK;Development;X-MandrivaLinux-Development-Tools;
 EOF
 cat > $RPM_BUILD_ROOT%{_datadir}/applications/mandriva-pycrust.desktop << EOF
 [Desktop Entry]
-Encoding=UTF-8
 Name=PyCrust
 Comment=GUI Python Shell with Filling
 Exec=%{_bindir}/pycrust %U
@@ -278,7 +276,6 @@ Categories=GNOME;GTK;Development;X-MandrivaLinux-Development-Tools;
 EOF
 cat > $RPM_BUILD_ROOT%{_datadir}/applications/mandriva-pyalamode.desktop << EOF
 [Desktop Entry]
-Encoding=UTF-8
 Name=PyAlaMode
 Comment=GUI Python Shell with Filling and Editor Windows
 Exec=%{_bindir}/pyalamode %U
@@ -290,7 +287,6 @@ Categories=GNOME;GTK;Development;X-MandrivaLinux-Development-Tools;
 EOF
 cat > $RPM_BUILD_ROOT%{_datadir}/applications/mandriva-xrced.desktop << EOF
 [Desktop Entry]
-Encoding=UTF-8
 Name=XRCed
 Comment=XRC resource editor for wxPython
 Exec=%{_bindir}/xrced %U
