@@ -258,7 +258,7 @@ cat > $RPM_BUILD_ROOT%{_datadir}/applications/mandriva-pyshell.desktop << EOF
 Name=PyShell
 Comment=GUI Python Shell
 Exec=%{_bindir}/pyshell %U
-Icon=PyCrust.png
+Icon=PyCrust
 Terminal=false
 Type=Application
 StartupNotify=true
@@ -269,7 +269,7 @@ cat > $RPM_BUILD_ROOT%{_datadir}/applications/mandriva-pycrust.desktop << EOF
 Name=PyCrust
 Comment=GUI Python Shell with Filling
 Exec=%{_bindir}/pycrust %U
-Icon=PyCrust.png
+Icon=PyCrust
 Terminal=false
 Type=Application
 StartupNotify=true
@@ -280,7 +280,7 @@ cat > $RPM_BUILD_ROOT%{_datadir}/applications/mandriva-pyalamode.desktop << EOF
 Name=PyAlaMode
 Comment=GUI Python Shell with Filling and Editor Windows
 Exec=%{_bindir}/pyalamode %U
-Icon=PyCrust.png
+Icon=PyCrust
 Terminal=false
 Type=Application
 StartupNotify=true
@@ -291,7 +291,7 @@ cat > $RPM_BUILD_ROOT%{_datadir}/applications/mandriva-xrced.desktop << EOF
 Name=XRCed
 Comment=XRC resource editor for wxPython
 Exec=%{_bindir}/xrced %U
-Icon=XRCed.png
+Icon=XRCed
 Terminal=false
 Type=Application
 StartupNotify=true
