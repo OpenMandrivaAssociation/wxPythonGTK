@@ -219,7 +219,7 @@ ln -sf %{wxconfigname} %buildroot%wxpref/bin/wx-config
 rm -rf %buildroot/include
 
 #menu
-# install Mandrake menu items
+# install Mandriva menu items
 mkdir -p $RPM_BUILD_ROOT%{_menudir}
 cat > $RPM_BUILD_ROOT%{_menudir}/%{name} <<EOF
 ?package(%{name}): \
