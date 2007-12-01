@@ -9,7 +9,7 @@
 %define port  	GTK
 %define lcport 	gtk2u
 %define tarname wxPython-src
-%define version 2.8.6.1
+%define version 2.8.7.1
 %define ver2    2.8
 %define release %mkrel 1
 %define wxpref  %{pref}/lib/wxPython
