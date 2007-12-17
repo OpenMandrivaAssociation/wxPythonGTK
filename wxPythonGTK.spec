@@ -37,7 +37,6 @@ Source0:   http://prdownloads.sourceforge.net/wxpython/%{tarname}-%{version}.tar
 License:   LGPL/wxWindows Library Licence, Version 3
 URL:       http://wxPython.org/
 Group:     Development/Python
-BuildRoot: %{_tmppath}/%{name}-buildroot
 %if %mdkversion > 200700
 BuildRequires: libmesaglu-devel
 %else
