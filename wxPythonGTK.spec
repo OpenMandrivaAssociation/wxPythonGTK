@@ -41,7 +41,7 @@ BuildRoot: %{_tmppath}/%{name}-buildroot
 %if %mdkversion > 200700
 BuildRequires: libmesaglu-devel
 %else
-BuildRequires: libMesaGLU-devel
+BuildRequires: mesaglu-devel
 %endif
 BuildRequires: libpython-devel >= %pythonver
 BuildRequires: gtk2-devel
