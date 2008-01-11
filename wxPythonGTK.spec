@@ -220,37 +220,6 @@ rm -rf %buildroot/include
 
 #menu
 # install Mandriva menu items
-mkdir -p $RPM_BUILD_ROOT%{_menudir}
-cat > $RPM_BUILD_ROOT%{_menudir}/%{name} <<EOF
-?package(%{name}): \
-	command="%{_bindir}/pyshell" \
-	needs="X11" \
-	icon="PyCrust.png" \
-	section="More Applications/Development/Tools" \
-	title="PyShell" \
-	longtitle="GUI Python Shell" xdg="true"
-?package(%{name}): \
-	command="%{_bindir}/pycrust" \
-	needs="X11" \
-	icon="PyCrust.png" \
-	section="More Applications/Development/Tools" \
-	title="PyCrust" \
-	longtitle="GUI Python Shell with Filling"  xdg="true"
-?package(%{name}): \
-	command="%{_bindir}/pyalamode" \
-	needs="X11" \
-	icon="PyCrust.png" \
-	section="More Applications/Development/Tools" \
-	title="PyAlaMode" \
-	longtitle="GUI Python Shell with Filling and Editor Windows"  xdg="true"
-?package(%{name}): \
-	command="%{_bindir}/xrced" \
-	needs="X11" \
-	icon="XRCed.png" \
-	section="More Applications/Development/Tools" \
-	title="XRCed" \
-	longtitle="XRC resource editor for wxPython"  xdg="true"
-EOF
 
 mkdir -p $RPM_BUILD_ROOT%{_datadir}/applications
 cat > $RPM_BUILD_ROOT%{_datadir}/applications/mandriva-pyshell.desktop << EOF
@@ -342,7 +311,6 @@ rm -rf $RPM_BUILD_ROOT
 %dir %{wxpref}/share/locale
 %{wxpref}/share/bakefile
 %{pref}/bin/*
-%_menudir/%name
 %_datadir/applications/mandriva-*
 %_iconsdir/*.png
 %_miconsdir/*.png
