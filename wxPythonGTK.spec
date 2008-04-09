@@ -11,7 +11,7 @@
 %define tarname wxPython-src
 %define version 2.8.7.1
 %define ver2    2.8
-%define release %mkrel 2
+%define release %mkrel 3
 %define wxpref  %{pref}/lib/wxPython
 
 # Should --enable-debug_flag be used in release builds?
@@ -81,6 +81,19 @@ window types and controls, all implemented with a native look and feel
 This package contains the wxversion python module needed if several versions of
 wxPython are installed.
 
+%package tools
+Summary: Example applications from wxPythonGTK
+Group: Development/Python
+Requires: %name = %version
+
+%description tools
+wxPython is a GUI toolkit for Python that is a wrapper around the
+wxWindows C++ GUI library.  wxPython provides a large variety of
+window types and controls, all implemented with a native look and feel
+(and native runtime speed) on the platforms it is supported on.
+
+This contains the example applications that come with wxPython like
+PyShell and XRCed.
 
 %package -n %libname
 Summary: Shared library of wxGTK for wxPythonGTK
@@ -286,9 +299,9 @@ mv %buildroot%py_puresitedir/* %buildroot%py_platsitedir
 %clean
 rm -rf $RPM_BUILD_ROOT
 
-%post
+%post tools
 %update_menus
-%postun
+%postun tools
 %clean_menus
 
 %post -n %libname -p /sbin/ldconfig
@@ -310,6 +323,9 @@ rm -rf $RPM_BUILD_ROOT
 %dir %{wxpref}/share/
 %dir %{wxpref}/share/locale
 %{wxpref}/share/bakefile
+
+%files tools
+%defattr(-,root,root)
 %{pref}/bin/*
 %_datadir/applications/mandriva-*
 %_iconsdir/*.png
