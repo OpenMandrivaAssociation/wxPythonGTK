@@ -11,7 +11,7 @@
 %define tarname wxPython-src
 %define version 2.8.7.1
 %define ver2    2.8
-%define release %mkrel 3
+%define release %mkrel 4
 %define wxpref  %{pref}/lib/wxPython
 
 # Should --enable-debug_flag be used in release builds?
@@ -84,7 +84,7 @@ wxPython are installed.
 %package tools
 Summary: Example applications from wxPythonGTK
 Group: Development/Python
-Requires: %name = %version
+Requires: %name = %epoch:%version
 
 %description tools
 wxPython is a GUI toolkit for Python that is a wrapper around the
