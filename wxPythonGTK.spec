@@ -38,11 +38,7 @@ License:   LGPL/wxWindows Library Licence, Version 3
 URL:       http://wxPython.org/
 Group:     Development/Python
 BuildRoot: %{_tmppath}/%{name}-buildroot
-%if %mdkversion > 200700
 BuildRequires: libmesaglu-devel
-%else
-BuildRequires: libMesaGLU-devel
-%endif
 BuildRequires: libpython-devel >= %pythonver
 BuildRequires: gtk2-devel
 BuildRequires: SDL-devel
