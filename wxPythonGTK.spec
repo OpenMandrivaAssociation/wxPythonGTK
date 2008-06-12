@@ -295,10 +295,14 @@ mv %buildroot%py_puresitedir/* %buildroot%py_platsitedir
 %clean
 rm -rf $RPM_BUILD_ROOT
 
+%if %mdkversion < 200900
 %post tools
 %update_menus
+%endif
+%if %mdkversion < 200900
 %postun tools
 %clean_menus
+%endif
 
 %if %mdkversion < 200900
 %post -n %libname -p /sbin/ldconfig
