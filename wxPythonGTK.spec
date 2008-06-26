@@ -45,6 +45,7 @@ BuildRequires: SDL-devel
 BuildRequires: libjpeg-devel
 BuildRequires: libpng-devel
 BuildRequires: libtiff-devel
+BuildRequires: libgnomeprintui-devel
 
 Provides: wxwin
 Provides: wxPython  = %{version}
