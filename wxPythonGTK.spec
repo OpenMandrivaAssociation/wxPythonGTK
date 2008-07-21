@@ -1,7 +1,3 @@
-##
-##  TODO: make it lib64 clean
-##
-%define buildfor_mdk90  %(awk '{print ($4 == "9.0")}' %{_sysconfdir}/mandrake-release)
 %define pref 	%{_prefix}
 %define python 	%{_bindir}/python
 %define pythonver 	2.3
@@ -9,7 +5,7 @@
 %define port  	GTK
 %define lcport 	gtk2u
 %define tarname wxPython-src
-%define version 2.8.8.0
+%define version 2.8.8.1
 %define ver2    2.8
 %define release %mkrel 1
 %define wxpref  %{pref}/lib/wxPython
@@ -18,11 +14,7 @@
 %define debug_flag 0
 %define name      wxPython%{port}
 %define major %ver2
-%if %buildfor_mdk90
-%define libname lib%{name}%{major}
-%else
 %define libname %mklibname %{name} %{major}
-%endif
 
 %define wxconfigname %{wxpref}/lib/wx/config/gtk2-unicode-release-%ver2
 
