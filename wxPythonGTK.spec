@@ -7,7 +7,7 @@
 %define tarname wxPython-src
 %define version 2.8.9.1
 %define ver2    2.8
-%define release %mkrel 2
+%define release %mkrel 3
 %define wxpref  %{pref}/lib/wxPython
 
 # Should --enable-debug_flag be used in release builds?
