@@ -43,6 +43,7 @@ Provides: wxwin
 Provides: wxPython  = %{version}
 # old wxPython packages
 Obsoletes: wxPython
+Obsoletes: wxpython2.6 <= 2.6.3.3-4
 Requires: %libname = %epoch:%version
 Requires: %name-wxversion = %epoch:%version
 %define _requires_exceptions libwx_
