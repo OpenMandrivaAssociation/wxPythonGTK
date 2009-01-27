@@ -7,7 +7,7 @@
 %define tarname wxPython-src
 %define version 2.8.9.1
 %define ver2    2.8
-%define release %mkrel 4
+%define release %mkrel 5
 %define wxpref  %{pref}/lib/wxPython
 
 # Should --enable-debug_flag be used in release builds?
@@ -48,8 +48,8 @@ Obsoletes: wxPython
 Obsoletes: wxpython2.6 <= 2.6.3.3-4
 Requires: %libname = %epoch:%version
 Requires: %name-wxversion = %epoch:%version
-%define _requires_exceptions libwx_
-%define _provides_exceptions libwx_
+%define _requires_exceptions libwx_gtk2u_gizmos-%{ver2}\\|libwx_gtk2u_gizmos_xrc-%{ver2}\\|libwx_gtk2u_stc-%{ver2}.so
+%define _provides_exceptions libwx_gtk2u_gizmos-%{ver2}\\|libwx_gtk2u_gizmos_xrc-%{ver2}\\|libwx_gtk2u_stc-%{ver2}.so
  
 %description
 wxPython is a GUI toolkit for Python that is a wrapper around the
