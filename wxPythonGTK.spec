@@ -5,9 +5,9 @@
 %define port  	GTK
 %define lcport 	gtk2u
 %define tarname wxPython-src
-%define version 2.8.9.1
+%define version 2.8.9.2
 %define ver2    2.8
-%define release %mkrel 6
+%define release %mkrel 1
 %define wxpref  %{pref}/lib/wxPython
 
 # Should --enable-debug_flag be used in release builds?
@@ -319,7 +319,6 @@ rm -rf $RPM_BUILD_ROOT
 %doc wxPython/docs/screenshots
 %py_platsitedir/wx.pth
 %py_platsitedir/wx*-*
-%py_platsitedir/wxaddons*
 %dir %{wxpref}
 %dir %{wxpref}/share/
 %dir %{wxpref}/share/locale
