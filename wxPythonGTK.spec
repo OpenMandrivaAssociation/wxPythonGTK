@@ -7,7 +7,7 @@
 %define tarname wxPython-src
 %define version 2.8.9.2
 %define ver2    2.8
-%define release %mkrel 2
+%define release %mkrel 3
 %define wxpref  %{pref}/lib/wxPython
 
 # Should --enable-debug_flag be used in release builds?
@@ -48,8 +48,8 @@ Provides: wxPython  = %{version}
 # old wxPython packages
 Obsoletes: wxPython
 Obsoletes: wxpython2.6 <= 2.6.3.3-4
-Requires: %libname = %epoch:%version
-Requires: %name-wxversion = %epoch:%version
+Requires: %libname = %epoch:%version-%release
+Requires: %name-wxversion = %epoch:%version-%release
 %define _requires_exceptions libwx_gtk2u_gizmos-%{ver2}\\|libwx_gtk2u_gizmos_xrc-%{ver2}\\|libwx_gtk2u_stc-%{ver2}.so\\|libwx_gtk2u_gl-%{ver2}.so
 %define _provides_exceptions libwx_gtk2u_gizmos-%{ver2}\\|libwx_gtk2u_gizmos_xrc-%{ver2}\\|libwx_gtk2u_stc-%{ver2}.so\\|libwx_gtk2u_gl-%{ver2}.so
  
@@ -78,7 +78,7 @@ wxPython are installed.
 %package tools
 Summary: Example applications from wxPythonGTK
 Group: Development/Python
-Requires: %name = %epoch:%version
+Requires: %name = %epoch:%version-%release
 
 %description tools
 wxPython is a GUI toolkit for Python that is a wrapper around the
@@ -101,8 +101,8 @@ in wxPythonGTK.
 Summary: Development files of wxPython%{port}
 Group: Development/Python
 Provides: libwxPythonGTK-devel = %epoch:%version-%release
-Requires: wxPython%{port} = %epoch:%{version}
-Requires: %libname = %epoch:%{version}
+Requires: wxPython%{port} = %epoch:%{version}-%release
+Requires: %libname = %epoch:%{version}-%release
 
 %description -n %libname-devel
 This packages contains the headers and etc. for building apps or
@@ -148,6 +148,7 @@ cd bld
         --enable-unicode \
 	--enable-exceptions \
 	--enable-catch_segvs \
+	--enable-graphics_ctx
 ##	--enable-debug_flag \
 ##	--with-odbc \
 
