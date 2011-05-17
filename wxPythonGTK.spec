@@ -1,13 +1,14 @@
 Summary:   Cross platform GUI toolkit for Python using wxGTK
 Name:      wxPythonGTK
 Version:   2.8.12.0
-Release:   2
+Release:   3
 Epoch:     1
 Source0:   http://prdownloads.sourceforge.net/wxpython/wxPython-src-%{version}.tar.bz2
 # Fix a string literal error - AdamW 2008/12
 Patch0:    wxPythonGTK/SOURCES/wxPython-2.8.9.1-literal.patch
 Patch1:		wxPython-2.8.12.0-link.patch
 Patch2:		wxPython-2.8.12.0-aui.patch
+Patch3:		wxPython-2.8.12-Bind-disconnect-event-handler.patch
 License:   LGPL/wxWindows Library Licence, Version 3
 URL:       http://wxPython.org/
 Group:     Development/Python
@@ -75,6 +76,7 @@ that wxPython uses.
 %patch0 -p2 -b .literal
 %patch1 -p1 -b .link
 %patch2 -p2 -b .aui
+%patch3 -p2
 
 %build
 python setup.py \
