@@ -1,7 +1,7 @@
 Summary:   Cross platform GUI toolkit for Python using wxGTK
 Name:      wxPythonGTK
 Version:   2.8.12.0
-Release:   3
+Release:   4
 Epoch:     1
 Source0:   http://prdownloads.sourceforge.net/wxpython/wxPython-src-%{version}.tar.bz2
 # Fix a string literal error - AdamW 2008/12
@@ -82,7 +82,7 @@ that wxPython uses.
 python setup.py \
 	WXPORT='gtk2'\
 	UNICODE=1 \
-	EP_ADD_OPTS=1 \
+	EP_ADD_OPTS=0 \
 	NO_SCRIPTS=1 \
 	build
 
@@ -92,7 +92,7 @@ python setup.py \
 	WXPORT='gtk2'\
 	UNICODE=1 \
 	EP_ADD_OPTS=1 \
-	NO_SCRIPTS=1 \
+	NO_SCRIPTS=0 \
 	install \
 	--root=$RPM_BUILD_ROOT
 
@@ -165,6 +165,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files tools
 %defattr(-,root,root)
+%_bindir/*
 %_datadir/applications/mandriva-*
 %_iconsdir/*.png
 %_miconsdir/*.png
