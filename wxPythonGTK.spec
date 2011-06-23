@@ -1,7 +1,7 @@
 Summary:   Cross platform GUI toolkit for Python using wxGTK
 Name:      wxPythonGTK
 Version:   2.8.12.0
-Release:   4
+Release:   5
 Epoch:     1
 Source0:   http://prdownloads.sourceforge.net/wxpython/wxPython-src-%{version}.tar.bz2
 # Fix a string literal error - AdamW 2008/12
@@ -152,6 +152,11 @@ install -m 644 wx/py/PyCrust_16.png $RPM_BUILD_ROOT%_miconsdir/PyCrust.png
 install -m 644 wx/py/PyCrust_32.png $RPM_BUILD_ROOT%_iconsdir/PyCrust.png
 install -m 644 wx/tools/XRCed/XRCed_16.png $RPM_BUILD_ROOT%{_miconsdir}/XRCed.png
 install -m 644 wx/tools/XRCed/XRCed_32.png $RPM_BUILD_ROOT%{_iconsdir}/XRCed.png
+
+#(proyvind): We remove eggs for older python versions as we don't need them
+#	     and to prevent dependencies to be generated against older python.
+#            Should we carry eggs shipped from upstream at all though..?
+find %{buildroot} -name \*.egg|grep -F -v py%{py_ver}.egg| xargs rm -f
 
 %clean
 rm -rf $RPM_BUILD_ROOT
