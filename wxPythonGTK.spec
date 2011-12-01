@@ -94,10 +94,10 @@ python setup.py \
 	EP_ADD_OPTS=1 \
 	NO_SCRIPTS=0 \
 	install \
-	--root=$RPM_BUILD_ROOT
+	--root=%{buildroot}
 
-mkdir -p $RPM_BUILD_ROOT%{_datadir}/applications
-cat > $RPM_BUILD_ROOT%{_datadir}/applications/mandriva-pyshell.desktop << EOF
+mkdir -p %{buildroot}%{_datadir}/applications
+cat > %{buildroot}%{_datadir}/applications/mandriva-pyshell.desktop << EOF
 [Desktop Entry]
 Name=PyShell
 Comment=GUI Python Shell
@@ -108,7 +108,7 @@ Type=Application
 StartupNotify=true
 Categories=GNOME;GTK;Development;
 EOF
-cat > $RPM_BUILD_ROOT%{_datadir}/applications/mandriva-pycrust.desktop << EOF
+cat > %{buildroot}%{_datadir}/applications/mandriva-pycrust.desktop << EOF
 [Desktop Entry]
 Name=PyCrust
 Comment=GUI Python Shell with Filling
@@ -119,7 +119,7 @@ Type=Application
 StartupNotify=true
 Categories=GNOME;GTK;Development;
 EOF
-cat > $RPM_BUILD_ROOT%{_datadir}/applications/mandriva-pyalamode.desktop << EOF
+cat > %{buildroot}%{_datadir}/applications/mandriva-pyalamode.desktop << EOF
 [Desktop Entry]
 Name=PyAlaMode
 Comment=GUI Python Shell with Filling and Editor Windows
@@ -130,7 +130,7 @@ Type=Application
 StartupNotify=true
 Categories=GNOME;GTK;Development;
 EOF
-cat > $RPM_BUILD_ROOT%{_datadir}/applications/mandriva-xrced.desktop << EOF
+cat > %{buildroot}%{_datadir}/applications/mandriva-xrced.desktop << EOF
 [Desktop Entry]
 Name=XRCed
 Comment=XRC resource editor for wxPython
@@ -148,10 +148,10 @@ mv %buildroot%py_puresitedir/* %buildroot%py_platsitedir
 %endif
 
 mkdir -p %buildroot%_miconsdir
-install -m 644 wx/py/PyCrust_16.png $RPM_BUILD_ROOT%_miconsdir/PyCrust.png
-install -m 644 wx/py/PyCrust_32.png $RPM_BUILD_ROOT%_iconsdir/PyCrust.png
-install -m 644 wx/tools/XRCed/XRCed_16.png $RPM_BUILD_ROOT%{_miconsdir}/XRCed.png
-install -m 644 wx/tools/XRCed/XRCed_32.png $RPM_BUILD_ROOT%{_iconsdir}/XRCed.png
+install -m 644 wx/py/PyCrust_16.png %{buildroot}%_miconsdir/PyCrust.png
+install -m 644 wx/py/PyCrust_32.png %{buildroot}%_iconsdir/PyCrust.png
+install -m 644 wx/tools/XRCed/XRCed_16.png %{buildroot}%{_miconsdir}/XRCed.png
+install -m 644 wx/tools/XRCed/XRCed_32.png %{buildroot}%{_iconsdir}/XRCed.png
 
 #(proyvind): We remove eggs for older python versions as we don't need them
 #	     and to prevent dependencies to be generated against older python.
@@ -159,7 +159,7 @@ install -m 644 wx/tools/XRCed/XRCed_32.png $RPM_BUILD_ROOT%{_iconsdir}/XRCed.png
 find %{buildroot} -name \*.egg|grep -F -v py%{py_ver}.egg| xargs rm -f
 
 %clean
-rm -rf $RPM_BUILD_ROOT
+rm -rf %{buildroot}
 
 %files
 %defattr(-,root,root)
