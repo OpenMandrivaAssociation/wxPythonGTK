@@ -1,0 +1,22 @@
+--- wxPython-src-2.8.12.0/wxPython/src/_evthandler.i.orig	2011-05-17 16:58:58.745191228 -0300
++++ wxPython-src-2.8.12.0/wxPython/src/_evthandler.i	2011-05-17 16:59:24.412191221 -0300
+@@ -150,7 +150,7 @@ public:
+                           to a range of IDs, such as with EVT_MENU_RANGE.
+             """
+             assert isinstance(event, wx.PyEventBinder)
+-            assert callable(handler)
++            assert handler is None or callable(handler)
+             assert source is None or hasattr(source, 'GetId')
+             if source is not None:
+                 id  = source.GetId()
+--- wxPython-src-2.8.12.0/wxPython/src/gtk/_core.py.orig	2011-05-17 16:59:52.562191206 -0300
++++ wxPython-src-2.8.12.0/wxPython/src/gtk/_core.py	2011-05-17 16:59:55.854191208 -0300
+@@ -3914,7 +3914,7 @@ class EvtHandler(Object):
+                       to a range of IDs, such as with EVT_MENU_RANGE.
+         """
+         assert isinstance(event, wx.PyEventBinder)
+-        assert callable(handler)
++        assert handler is None or callable(handler)
+         assert source is None or hasattr(source, 'GetId')
+         if source is not None:
+             id  = source.GetId()
