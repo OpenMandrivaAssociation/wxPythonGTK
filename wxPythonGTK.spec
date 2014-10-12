@@ -7,6 +7,7 @@ Group:		Development/Python
 License:	LGPL/wxWindows Library Licence, Version 3
 URL:		http://wxPython.org/
 Source0:	http://prdownloads.sourceforge.net/wxpython/wxPython-src-%{version}.tar.bz2
+Source100:	%{name}.rpmlintrc
 # Fix a string literal error - AdamW 2008/12
 Patch0:		wxPythonGTK/SOURCES/wxPython-2.8.9.1-literal.patch
 Patch1:		wxPython-2.8.12.0-link.patch
@@ -137,8 +138,8 @@ Categories=GNOME;GTK;Development;
 EOF
 
 #gw fix paths
-%if %{_lib} != lib
-mv %{buildroot}%{py_puresitedir}/* %{buildroot}%{py_platsitedir}
+%if "%{_lib}" != "lib"
+mv %{buildroot}%{py2_puresitedir}/* %{buildroot}%{py2_platsitedir}
 %endif
 
 mkdir -p %{buildroot}%{_miconsdir}
