@@ -1,7 +1,7 @@
 Summary:	Cross platform GUI toolkit for Python using wxGTK
 Name:		wxPythonGTK
 Version:	2.8.12.0
-Release:	15
+Release:	16
 Epoch:		1
 Group:		Development/Python
 License:	LGPL/wxWindows Library Licence, Version 3
@@ -13,6 +13,7 @@ Patch0:		wxPythonGTK/SOURCES/wxPython-2.8.9.1-literal.patch
 Patch1:		wxPython-2.8.12.0-link.patch
 Patch2:		wxPython-2.8.12.0-aui.patch
 Patch3:		wxPython-2.8.12-Bind-disconnect-event-handler.patch
+Patch4:		wxPython-2.8.12.0-numpy-1.9.patch
 BuildRequires:	python2-devel
 BuildRequires:	wxgtku2.8-devel >= 2.8.12
 BuildRequires:	pkgconfig(glu)
@@ -73,6 +74,7 @@ that wxPython uses.
 %patch1 -p1 -b .link
 %patch2 -p2 -b .aui
 %patch3 -p2
+%patch4 -p2
 
 %build
 python2 setup.py \
