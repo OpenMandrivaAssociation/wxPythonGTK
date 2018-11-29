@@ -1,7 +1,7 @@
 Summary:	Cross platform GUI toolkit for Python using wxGTK
 Name:		wxPythonGTK
-Version:	2.8.12.0
-Release:	19
+Version:	3.0.2.0
+Release:	1
 Epoch:		1
 Group:		Development/Python
 License:	LGPL/wxWindows Library Licence, Version 3
@@ -9,13 +9,13 @@ URL:		http://wxPython.org/
 Source0:	http://prdownloads.sourceforge.net/wxpython/wxPython-src-%{version}.tar.bz2
 Source100:	%{name}.rpmlintrc
 # Fix a string literal error - AdamW 2008/12
-Patch0:		wxPythonGTK/SOURCES/wxPython-2.8.9.1-literal.patch
+Patch0:		wxPython-3.0.0.0-literal.patch
 Patch1:		wxPython-2.8.12.0-link.patch
 Patch2:		wxPython-2.8.12.0-aui.patch
 Patch3:		wxPython-2.8.12-Bind-disconnect-event-handler.patch
 Patch4:		wxPython-2.8.12.0-numpy-1.9.patch
 BuildRequires:	python2-devel
-BuildRequires:	wxgtku2.8-devel >= 2.8.12
+BuildRequires:	wxgtku3.0-devel
 BuildRequires:	pkgconfig(glu)
 Provides:	wxwin = %{version}
 Provides:	wxPython = %{version}
@@ -70,15 +70,16 @@ that wxPython uses.
 
 %prep
 %setup -qn wxPython-src-%{version}/wxPython
-%patch0 -p2 -b .literal
-%patch1 -p1 -b .link
-%patch2 -p2 -b .aui
-%patch3 -p2
-%patch4 -p2
+%patch0 -p1 -b .literal
+#patch0 -p2 -b .literal
+#patch1 -p1 -b .link
+#patch2 -p2 -b .aui
+#patch3 -p2
+#patch4 -p2
 
 %build
 python2 setup.py \
-	WXPORT='gtk2'\
+	WXPORT='gtk3'\
 	UNICODE=1 \
 	EP_ADD_OPTS=0 \
 	NO_SCRIPTS=1 \
@@ -86,7 +87,7 @@ python2 setup.py \
 
 %install
 python2 setup.py \
-	WXPORT='gtk2'\
+	WXPORT='gtk3'\
 	UNICODE=1 \
 	EP_ADD_OPTS=1 \
 	NO_SCRIPTS=0 \
@@ -171,6 +172,6 @@ find %{buildroot} -name \*.egg|grep -F -v py%{py_ver}.egg| xargs rm -f
 %{py2_platsitedir}/wxversion*
 
 %files devel
-%{_includedir}/wx-2.8/wx/wxPython
+%{_includedir}/wx-3.0/wx/wxPython
 
 
