@@ -17,6 +17,9 @@ Patch4:		wxPython-2.8.12.0-numpy-1.9.patch
 BuildRequires:	python2-devel
 BuildRequires:	wxgtku3.0-devel
 BuildRequires:	pkgconfig(glu)
+BuildRequires:	pkgconfig(egl)
+BuildRequires:	pkgconfig(gl)
+BuildRequires:  pkgconfig(gtk+-3.0)
 Provides:	wxwin = %{version}
 Provides:	wxPython = %{version}
 Requires:	%{name}-wxversion = %{EVRD}
