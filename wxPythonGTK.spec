@@ -1,7 +1,7 @@
 Summary:	Cross platform GUI toolkit for Python using wxGTK
 Name:		wxPythonGTK
 Version:	3.0.2.0
-Release:	1
+Release:	2
 Epoch:		1
 Group:		Development/Python
 License:	LGPL/wxWindows Library Licence, Version 3
